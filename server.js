@@ -175,7 +175,7 @@ app.delete("/images/:image_name" , async(req,res)=>{
   const image_name = req.params.image_name;
   try {
     await db.query("DELETE FROM images WHERE image_name =?",[image_name]);
-    fs.unlink(`../client/public/uploads/posts/${image_name}` , (err)=>{
+    fs.unlink(`./uploads/posts/${image_name}` , (err)=>{
       if(err) console.log(`${err} occurs in our system`)
       else res.send("success deletes image")
     })
