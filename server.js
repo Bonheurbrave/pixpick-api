@@ -77,7 +77,7 @@ app.post("/messages", (req, res) => {
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "../client/public/uploads/posts");
+    cb(null, "./uploads/posts");
   },
   filename: (req, file, cb) => {
     cb(null, file.originalname);
